@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, Icon, Image } from 'semantic-ui-react'
 
-export default function TripCard (data) {
+export default function PortfolioCard (data) {
   return(
   <Card>
     {//needs toggle button + remove/edit button}
