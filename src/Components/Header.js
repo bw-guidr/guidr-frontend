@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from './Navigation/Navbar';
 import styled from 'styled-components';
-import logo from '../Assets/GuidrLogoHeadersm.png';
+import logo from '../Assets/GuidrLogo_White.svg';
 
 const HeaderDiv = styled.div`
   width: 98%;
@@ -10,6 +10,7 @@ const HeaderDiv = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: #1c252c;
   
   img {
     max-width: 30%;
