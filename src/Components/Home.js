@@ -1,12 +1,20 @@
 import React from 'react'
-import Nav from './Navigation/Navbar'
+import Header from './Header';
+import Body from './Layout';
+
 
 class Home extends React.Component {
     render(){
         return(
-            <div>
-                <Nav />
-            </div>
+            <Body>
+                <Header />
+                <main className='home-content'>
+                    <article>
+                        {/* Log in, go to dashboard */}
+                        Placeholder text
+                    </article>
+                </main>
+            </Body>
         )
     }
 }
