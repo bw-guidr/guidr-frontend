@@ -1,0 +1,6 @@
+root/ => Displays options for register/login
+          If they've already logged in take them to root/users/:id aka dashboard
+          If they've registered, use token to automatically sign them in
+
+root/users/:id => Display dashboard. List view of activity/trips. Give links to go to portfolio aka edit page
+root/users/:id/portfolio => Cards of each trip and edit buttons on them. Allows them to update trips, and create new trips
