@@ -10,7 +10,7 @@ export default function TripGrid() {
       axios
         .get('')
         .then(response => {
-          setCharacters(response.data.results);
+          setTrips(response.data.results);
           console.log('character API:', response.data.results)
           console.log('characters:', characters)
         })
@@ -20,7 +20,7 @@ export default function TripGrid() {
   }, [])
 
   return (
-  <section className='trip-grid'>
+  <section className='ui link cards'>
     {trips.map(trips =>{
             return <TripCard name={trips.name} 
                                description={trips.description}
