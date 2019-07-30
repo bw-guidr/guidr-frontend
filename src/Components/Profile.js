@@ -5,7 +5,7 @@ import axios from 'axios';
 
 function Profile() {
 
-    const [ profile, setProfile ] = useState([])
+    const [ profile, setProfile ] = useState([]);
 
     useEffect(() => {
 

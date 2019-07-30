@@ -42,6 +42,10 @@ function App() {
           )}
         />
         <Route
+          exact path="/dashboard"
+          render={() => <Portfolio/>}
+        />
+        <Route
           exact path="/profile"
           render={() => (
             <Profile />
