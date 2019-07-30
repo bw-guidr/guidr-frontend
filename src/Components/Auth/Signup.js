@@ -18,7 +18,7 @@ class Signup extends React.Component {
         title: "",
         tagline: "",
         age: "",
-        guideXP: ""
+        length_as_guide: ""
       }
     };
   }
@@ -45,7 +45,7 @@ class Signup extends React.Component {
       title: "",
       tagline: "",
       age: "",
-      guideXP: ""
+      length_as_guide: ""
     });
     this.props.history.push("/login");
     console.log(this.state);
@@ -115,11 +115,11 @@ class Signup extends React.Component {
                 onChange={this.handleChange}
             />
             <input
-                className="guideXP-field"
+                className="guideTime-field"
                 type="string"
-                name="guideXP"
+                name="length_as_guide"
                 placeholder="Enter guide experience here e.g. 4 years"
-                value={this.state.credentials.guideXP}
+                value={this.state.credentials.length_as_guide}
                 onChange={this.handleChange}
             />
 
