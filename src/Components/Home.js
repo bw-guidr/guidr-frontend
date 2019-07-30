@@ -3,6 +3,13 @@ import Header from './Header';
 import Body from './Layout';
 import axios from 'axios';
 import TripCard from './TripCard';
+import styled from 'styled-components';
+
+const CardContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+`;
 
 
 class Home extends React.Component {
@@ -29,8 +36,9 @@ class Home extends React.Component {
           <Header />
           <main className='home-content'>
             <article>
-              { this.state.success ? this.state.trips.map(o => <TripCard {...o} key={o.id} />) : null }
-              Placeholder text
+              <CardContainer>
+                { this.state.success ? this.state.trips.map(o => <TripCard {...o} key={o.id} />) : null }
+              </CardContainer>
             </article>
           </main>
         </Body>
