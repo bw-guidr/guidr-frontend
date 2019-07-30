@@ -27,7 +27,7 @@ class Home extends React.Component {
     console.log(res.data);
     let prof = res.data.filter(c => c.trip_type === 'Professional');
     console.log(prof);
-    this.setState({trips: res.data, success: 1});
+    this.setState({trips: prof, success: 1});
   };
 
   render(){
