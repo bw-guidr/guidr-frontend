@@ -11,7 +11,6 @@ function App() {
   return (
    
     <Router>
-      Hello
           <Route
           exact path="/"
           render={() => (
