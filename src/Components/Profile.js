@@ -24,7 +24,6 @@ function Profile() {
             <Header />
             <div className="userProfile">
                 <h1>{profile.name}</h1>
-                <img src={profile.image_url} alt="user" />
                 <p>Title: {profile.title}</p>
                 <p>Tagline: {profile.tagline}</p>
                 <p>Age: {profile.age}</p>
