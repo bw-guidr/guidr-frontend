@@ -1,20 +1,31 @@
 import React from 'react'
 import { Card, Icon, Image } from 'semantic-ui-react'
+import styled from 'styled-components';
+
+const CardStyled = styled(Card)`
+  &&& {
+    width: 25%;
+  }
+`;
 
 export default function TripCard (data) {
   return(
-  <Card>
-    <Image src={data.img} wrapped ui={false} />
+  <CardStyled>
+    {/* <Image src={data.img} wrapped ui={false} /> */}
     <Card.Content>
-      <Card.Header>{data.name}</Card.Header>
+      <Card.Header>{data.title}</Card.Header>
       <Card.Meta>{data.description}</Card.Meta>
     </Card.Content>
     <Card.Content extra>
       <a>
+        {/* Insert author somewhere, through data.user_id */}
         <Icon name='user' />
-        {data.miles}
+        <ul>
+          <li>Miles: {data.miles}</li>
+          <li>Location: {data.location}</li>
+        </ul>
       </a>
     </Card.Content>
-  </Card>
+  </CardStyled>
   )
 }

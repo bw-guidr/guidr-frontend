@@ -5,24 +5,29 @@ import { connect } from "react-redux";
 class Nav extends React.Component {
   render() {
     return (
-        <div>
-          <NavLink className="nav-links nav-link-home" exact to="/login">
-            Login
-          </NavLink>
-          <NavLink
-              className="nav-links"
-              exact
-              to="/signup"
-          >
-            Sign-Up
-          </NavLink>
-          <NavLink className="nav-links nav-link-profile" exact to="/profile">
+
+      <div>
+        <NavLink className="nav-links nav-link-home" exact to="/login">
+          Login
+        </NavLink>
+        <NavLink
+          className="nav-links"
+          exact
+          to="/signup"
+        >
+          Sign-Up
+        </NavLink>
+       <NavLink className="nav-links nav-link-profile" exact to="/profile">
             Profile
           </NavLink>
-          <NavLink className="nav-links" exact to="/">
-            Home
-          </NavLink>
-        </div>
+        <NavLink className="nav-links" exact to="/">
+          Home
+        </NavLink>
+        <NavLink className="nav-links" exact to="/portfolio">
+          Portfolio
+        </NavLink>
+      </div>
+
     );
   }
 }
