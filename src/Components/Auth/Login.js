@@ -1,5 +1,5 @@
 import React from 'react'
-import Nav from '../Navigation/Navbar'
+import Header from '../Header'
 import { login } from '../../Store/Action/Action'
 import { connect } from 'react-redux'
 import Loader from 'react-loader-spinner'
@@ -50,7 +50,7 @@ class Login extends React.Component {
     render() {
         return (
             <div className="login-page">
-                <Nav />
+                <Header />
                 <div>
                 <h1 className="login-text">Sign in</h1>
                 <form 

@@ -1,5 +1,5 @@
 import React from 'react'
-import Nav from '../Navigation/Navbar'
+import Header from '../Header'
 import { signup } from '../../Store/Action/Action'
 import { connect } from 'react-redux'
 import Loader from 'react-loader-spinner'
@@ -48,7 +48,7 @@ class Signup extends React.Component {
     render() {
         return (
             <div className="signup-page">
-                <Nav />
+                <Header />
                 <div>
                 <h1 className="signup-text">Create an account</h1>
                 <form 
