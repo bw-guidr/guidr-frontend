@@ -1,35 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
+function ProfileForm(props) {
+  console.log(props);
 
-function ProfileForm () {
-    const [userProfile, setUserProfile] = useState({
-        title: '',
-        tagline: '',
-        age: '',
-        guideXP: '';
-    });
-    
-    function handleChange(event) {
-        const updatedUserProfile = {
-          ...userProfile,
-          [event.target.name]: event.target.value
-        };
+  const [userProfile, setUserProfile] = useState({
+    title: "",
+    tagline: "",
+    age: "",
+    guideXP: ""
+  });
 
-        setUserProfile(updatedUserProfile);
-    }    
+  function handleChange(event) {
+    const updatedUserProfile = {
+      ...userProfile,
+      [event.target.name]: event.target.value
+    };
 
-    function handleSubmit(event) {
-        event.preventDefault();
+    setUserProfile(updatedUserProfile);
+  }
 
-    }
+  function handleSubmit(event) {
+    event.preventDefault();
+  }
 
-    return(
+  return (
     <form onSubmit={handleSubmit}>
       <fieldset>
         <legend>User Profile</legend>
         <div className="inputField">
           <label for="title">
-            Name
+            Title
             <div>
               <input
                 type="text"
@@ -43,7 +43,7 @@ function ProfileForm () {
         </div>
         <div className="inputField-tagline">
           <label for="tagline">
-            E-mail
+            Tagline
             <div>
               <input
                 type="text"
@@ -57,7 +57,7 @@ function ProfileForm () {
         </div>
         <div className="inputField">
           <label for="age">
-            Team Role
+            Age
             <div>
               <input
                 type="text"
@@ -71,7 +71,7 @@ function ProfileForm () {
         </div>
         <div className="inputField">
           <label for="guideXP">
-            Team Role
+            Years of Guide experience
             <div>
               <input
                 type="text"
@@ -86,5 +86,7 @@ function ProfileForm () {
         <button type="submit">Submit</button>
       </fieldset>
     </form>
-    );
+  );
 }
+
+export default ProfileForm;
