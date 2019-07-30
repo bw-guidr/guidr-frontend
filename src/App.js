@@ -40,6 +40,10 @@ function App() {
             <SignUp />
           )}
         />
+        <Route
+          exact path="/dashboard"
+          render={() => <Portfolio/>}
+        />
     </Router>
   );
 }
