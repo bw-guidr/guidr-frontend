@@ -4,15 +4,14 @@ import TripCard from './TripCard'
 
 export default function TripGrid() {
   
-  const [trips, setTrips] = useState([]);
+  const [savedTrips, setSavedTrips] = useState([]);
   useEffect(() => {
 
       axios
-        .get('')
+        .get('https://guidr-backend-justin-chen.herokuapp.com/user/${id}/trips')
         .then(response => {
           setTrips(response.data.results);
-          console.log('character API:', response.data.results)
-          console.log('characters:', characters)
+          console.log('Users API:', response.data.results)
         })
         .catch(error => {
           console.error('Server Error', error);
