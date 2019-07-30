@@ -14,9 +14,7 @@ class Signup extends React.Component {
             credentials: {
                 username: '',
                 password: '',
-                firstName: '',
-                lastName: '',
-                email: ''
+                name: ''
             }
         }
     }
@@ -55,38 +53,21 @@ class Signup extends React.Component {
                 className="signup-form"
                 onSubmit={this.signupSubmit}>
                     <input
+                        className="name"
+                        name='name'
+                        placeholder="Name"
+                        type="string"
+                        value={this.state.credentials.name}
+                        onChange={this.handleChange}
+                        required>
+                    </input>
+
+                    <input
                         className="username-field"
                         name='username'
                         placeholder="username"
                         type="string"
                         value={this.state.credentials.username}
-                        onChange={this.handleChange}
-                        required>
-                    </input>
-                    <input
-                        className="firstname-field"
-                        name='firstName'
-                        placeholder="first name"
-                        type="string"
-                        value={this.state.credentials.firstName}
-                        onChange={this.handleChange}
-                        required>
-                    </input>
-                    <input
-                        className="lastname-field"
-                        name='lastName'
-                        placeholder="last name"
-                        type="string"
-                        value={this.state.credentials.lastName}
-                        onChange={this.handleChange}
-                        required>
-                    </input>
-                    <input
-                        className="email-field"
-                        type="string"
-                        name='email'
-                        placeholder="email address"
-                        value={this.state.credentials.email}
                         onChange={this.handleChange}
                         required>
                     </input>
