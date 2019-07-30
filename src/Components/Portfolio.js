@@ -4,8 +4,7 @@ import Body from './Layout';
 import PortfolioGrid from './PortfolioGrid'
 
 
-class Portfolio extends React.Component {
-  render(){
+export default function Portfolio(){
     return(
         <Body>
           <Header />
@@ -14,7 +13,4 @@ class Portfolio extends React.Component {
           </main>
         </Body>
     )
-  }
 }
-
-export default Portfolio
