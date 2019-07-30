@@ -9,7 +9,9 @@ import SignUp from './Components/Auth/Signup'
 
 function App() {
   return (
+   
     <Router>
+      Hello
           <Route
           exact path="/"
           render={() => (
