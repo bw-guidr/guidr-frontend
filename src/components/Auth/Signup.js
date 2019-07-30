@@ -50,7 +50,7 @@ class Signup extends React.Component {
             <div className="signup-page">
                 <Nav />
                 <div>
-                <h1 className="signup-text">Create an account</h1>
+                <h1 className="signup-text">Create an Account</h1>
                 <form 
                 className="signup-form"
                 onSubmit={this.signupSubmit}>
