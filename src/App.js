@@ -44,6 +44,12 @@ function App() {
           exact path="/dashboard"
           render={() => <Portfolio/>}
         />
+        <Route
+            exact path="/profile"
+            render={() => (
+                <Profile />
+            )}
+        />
     </Router>
   );
 }
