@@ -52,7 +52,7 @@ class Login extends React.Component {
             <div className="login-page">
                 <Nav />
                 <div>
-                <h1 className="login-text">Sign In</h1>
+                <h1 className="login-text">Sign in</h1>
                 <form 
                 className="login-form"
                 onSubmit={this.loginSubmit}>
