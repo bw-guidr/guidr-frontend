@@ -61,8 +61,12 @@ class Signup extends React.Component {
                         onChange={this.handleChange}
                         required>
                     </input>
-
                     <input
+                        className="username-field"
+                        name='username'
+                        placeholder="username"
+                        type="string"
+                        value={this.state.credentials.username}
                         className="username-field"
                         name='username'
                         placeholder="username"
