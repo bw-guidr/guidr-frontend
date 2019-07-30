@@ -4,6 +4,7 @@ import {
     LOGIN_FAILURE,
     ERROR_MESSAGE,
     GET_USERS,
+    GET_TRIPS,
     LOADING
 } from '../Action/Action'
 
@@ -43,6 +44,8 @@ export const reducer = (state=initialState,action) => {
             return Object.assign({}, state, {error: action.errorMessage, loading: false})
         case LOADING:
             return Object.assign({}, state, {loading: true})
+        case GET_TRIPS:
+        return Object.assign({}, state, {trips: action.trips, loading: false, error: ''})
         default:
             return state;    
         }

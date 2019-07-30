@@ -4,8 +4,10 @@ import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Home from './Components/Home'
+import Portfolio from './Components/Portfolio'
 import Login from './Components/Auth/Login'
 import SignUp from './Components/Auth/Signup'
+
 
 function App() {
   return (
@@ -15,6 +17,13 @@ function App() {
           exact path="/"
           render={() => (
             <Home />
+          )}
+        />  
+
+        <Route
+          exact path="/portfolio"
+          render={() => (
+            <Portfolio />
           )}
         />  
 
