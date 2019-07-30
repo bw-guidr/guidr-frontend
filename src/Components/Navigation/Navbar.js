@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 class Nav extends React.Component {
   render() {
     return (
+
       <div>
         <NavLink className="nav-links nav-link-home" exact to="/login">
           Login
@@ -16,6 +17,9 @@ class Nav extends React.Component {
         >
           Sign-Up
         </NavLink>
+       <NavLink className="nav-links nav-link-profile" exact to="/profile">
+            Profile
+          </NavLink>
         <NavLink className="nav-links" exact to="/">
           Home
         </NavLink>
@@ -23,6 +27,7 @@ class Nav extends React.Component {
           Portfolio
         </NavLink>
       </div>
+
     );
   }
 }
