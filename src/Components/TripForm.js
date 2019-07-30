@@ -23,7 +23,7 @@ export default function TripForm() {
     setError(); // reset it after last submit
     let id = localStorage.getItem('id');
     for(let key in content) {
-      if(key !== 'img' && !content[key]) {
+      if(!content[key]) {
         setError(`Error: ${key} field incorrect.`);
         return false;
       }
@@ -50,7 +50,6 @@ export default function TripForm() {
           <input type='text' placeholder='Location' name='location' onChange={updateInput} value={content.location} />
           <input type='text' placeholder='Description' name='description' onChange={updateInput} value={content.description} />
           <input type='number' placeholder='Miles Traveled' name='miles' onChange={updateInput} value={content.miles} />
-          <input type='text' placeholder='Image URL' name='img' onChange={updateInput} value={content.img} />
           <button onSubmit={e => e.preventDefault()}>Submit</button>
         </fieldset>
       </FormStyled>
