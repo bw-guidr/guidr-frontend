@@ -9,7 +9,7 @@ export default function PortfolioCard (props) {
   useEffect(() => {
     setThisTrip(props.tripToEdit);
   },[props.tripToEdit])
-  
+  console.log(props)
   return (
   <Card>
     {props.editNum === props.id ? (
