@@ -9,8 +9,10 @@ const Body = styled.div`
   
   main.home-content {
     display: flex;
-    justify-content: center;
-    width: 80%;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
     
     article {
       padding: 10px;
