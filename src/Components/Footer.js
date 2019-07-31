@@ -13,6 +13,13 @@ function Footer() {
                 <NavLink>News</NavLink>
                 <NavLink>Contact</NavLink>
             </div>
+            <main className="footer-contact-info">
+                
+            </main>
+            <div className="footer-copyright">
+                Copyright &copy; Guidr
+                <p>All rights reserved</p>
+            </div>
         </div>
     )
 }
