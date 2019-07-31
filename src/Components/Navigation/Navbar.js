@@ -15,7 +15,7 @@ class Nav extends React.Component {
           exact
           to="/signup"
         >
-          Sign-Up
+          Register
         </NavLink>
         <NavLink className="nav-links" exact to="/">
           Home
