@@ -14,7 +14,10 @@ function Footer() {
                 <NavLink>Contact</NavLink>
             </div>
             <main className="footer-contact-info">
-                
+                <div className="footer-contact-us">
+                    <h3>Contact Us</h3>
+                    <p className="footer-contact-email">hello@email.com</p>
+                </div>
             </main>
             <div className="footer-copyright">
                 Copyright &copy; Guidr
