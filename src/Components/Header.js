@@ -21,8 +21,6 @@ const HeaderDiv = styled.div`
     }
   }
   
-
-  
 `;
 
 export default function Header() {
