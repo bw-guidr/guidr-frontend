@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from './Header';
+import Footer from './Footer';
 import Body from './Layout';
 import axios from 'axios';
 import TripCard from './TripCard';
@@ -41,6 +42,7 @@ class Home extends React.Component {
               </CardContainer>
             </article>
           </main>
+          <Footer />
         </Body>
     )
   }

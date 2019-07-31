@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
-import { defaultProps } from 'recompose';
+import './Fonts.css';
 
 const FormStyled = styled.form`
   border: 1px solid black;
+  font-family: Bebas;
+  
+  fieldset {
+    input {
+      font-family: Bebas;
+    }
+  }
 `;
 
 const Error = styled.div`

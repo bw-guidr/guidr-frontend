@@ -99,28 +99,28 @@ class Signup extends React.Component {
               onChange={this.handleChange}
             />
             <input
-                className="tagline-field"
-                type="string"
-                name="tagline"
-                placeholder="Add a short description of the type of guide you specialize in"
-                value={this.state.credentials.tagline}
-                onChange={this.handleChange}
+              className="tagline-field"
+              type="string"
+              name="tagline"
+              placeholder="Add a short description of the type of guide you specialize in"
+              value={this.state.credentials.tagline}
+              onChange={this.handleChange}
             />
             <input
-                className="age-field"
-                type="number"
-                name="age"
-                placeholder="Enter age here"
-                value={this.state.credentials.age}
-                onChange={this.handleChange}
+              className="age-field"
+              type="number"
+              name="age"
+              placeholder="Enter age here"
+              value={this.state.credentials.age}
+              onChange={this.handleChange}
             />
             <input
-                className="guideTime-field"
-                type="string"
-                name="length_as_guide"
-                placeholder="Enter guide experience here e.g. 4 years"
-                value={this.state.credentials.length_as_guide}
-                onChange={this.handleChange}
+              className="guideTime-field"
+              type="string"
+              name="length_as_guide"
+              placeholder="Enter guide experience here e.g. 4 years"
+              value={this.state.credentials.length_as_guide}
+              onChange={this.handleChange}
             />
 
             <button className="signup-btn" onClick={this.signupSubmit}>

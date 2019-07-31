@@ -1,38 +1,39 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react";
 // import ProfileForm from './ProfileForm'
-import Header from './Header'
-import axios from 'axios';
+import axios from "axios";
 
-function Profile() {
+function Profile(props) {
+  const [profile, setProfile] = useState([]);
+  let id = props.match.params.id;
 
-    const [ profile, setProfile ] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`https://guidr-backend-justin-chen.herokuapp.com/user/${id}`)
+      .then(res => {
+        console.log(res.data);
+        setProfile(res.data);
+      })
+      .catch(err => {
+        console.log("API unavailable:", err);
+      });
+  }, [props.match.params.id]);
 
-    useEffect(() => {
-
-        axios.get(`https://guidr-backend-justin-chen.herokuapp.com/user/1`)
-        .then(res => {
-            console.log(res.data)
-            setProfile(res.data)
-        })
-        .catch(err => {
-            console.log("API unavailable:", err)
-        })
-    }, []);
-
-    return(
-        <div className="profile">
-            <Header />
-            <div className="userProfile">
-                <h1>{profile.name}</h1>
-                <img src={profile.image_url} alt="user" />
-                <p>Title: {profile.title}</p>
-                <p>Tagline: {profile.tagline}</p>
-                <p>Age: {profile.age}</p>
-                <p>Years of Guide Experience:{profile.length_as_guide}</p>
-            </div>
-
+  return (
+    <div className="profile">
+      <div className="userProfile">
+        <div className="profileImg">
+          <img src={profile.image_url} alt="user" />
         </div>
-    )
+        <h1>{profile.name}</h1>
+        {profile.image_url ? <img src={profile.image_url} alt="user" /> : null}
+        <p>Title: {profile.title}</p>
+        <p>Tagline: {profile.tagline}</p>
+        <p>Age: {profile.age}</p>
+        <p>{profile.length_as_guide} Experience</p>
+        <p>{profile.tagline}</p>
+      </div>
+    </div>
+  );
 }
 
 export default Profile;

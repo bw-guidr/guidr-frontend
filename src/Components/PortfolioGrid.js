@@ -22,7 +22,7 @@ export default function PortfolioGrid(props) {
   }, [props.update])
 
   return (
-  <section className='ui link cards'>
+  <div className='ui link cards'>
     {trips.map(trips =>{
             return <PortfolioCard  
             {...trips} 
@@ -32,7 +32,7 @@ export default function PortfolioGrid(props) {
             tripToEdit={tripToEdit}
             removeTrip={removeTrip}
             toggleEdit={toggleEdit}/> })}
-  </section>
+  </div>
   )
   
   function editTrip(e, tripToEdit) {
