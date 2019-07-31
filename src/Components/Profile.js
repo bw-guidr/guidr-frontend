@@ -6,10 +6,11 @@ import axios from 'axios';
 function Profile() {
 
     const [ profile, setProfile ] = useState([]);
+    const [id, setId] = useState(1);
 
     useEffect(() => {
 
-        axios.get(`https://guidr-backend-justin-chen.herokuapp.com/user/1`)
+        axios.get(`https://guidr-backend-justin-chen.herokuapp.com/user/${id}`)
         .then(res => {
             console.log(res.data)
             setProfile(res.data)
@@ -23,11 +24,14 @@ function Profile() {
         <div className="profile">
             <Header />
             <div className="userProfile">
+                <div className="profileImg">
+                    <img src={profile.image_url} alt="user" />
+                </div>
                 <h1>{profile.name}</h1>
-                <p>Title: {profile.title}</p>
-                <p>Tagline: {profile.tagline}</p>
+                <p>{profile.title}</p>
                 <p>Age: {profile.age}</p>
-                <p>Years of Guide Experience:{profile.length_as_guide}</p>
+                <p>{profile.length_as_guide} Experience</p>
+                <p>{profile.tagline}</p>
             </div>
 
         </div>
