@@ -2,16 +2,16 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import PortfolioCard from './PortfolioCard'
 
-export default function PortfolioGrid() {
-
-  const [id, setId] = useState(1)
-  const [tripToEdit, setTripToEdit] = useState({email:'',name:'',role:''});
+export default function PortfolioGrid(props) {
+  let localID = localStorage.getItem('id');
+  const [id, setId] = useState(localID);
+  const [tripToEdit, setTripToEdit] = useState({});
   const [editNum, setEditNum] = useState(0);
   const [trips, setTrips] = useState([]);
   useEffect(() => {
 
       axios
-        .get(`https://guidr-backend-justin-chen.herokuapp.com/trips/all`)
+        .get(`https://guidr-backend-justin-chen.herokuapp.com/user/${id}/trips`)
         .then(response => {
           setTrips(response.data);
           console.log('Users API:', response.data)
@@ -19,10 +19,10 @@ export default function PortfolioGrid() {
         .catch(error => {
           console.error('Server Error', error);
         });
-  }, [id])
+  }, [props.update])
 
   return (
-  <section className='ui link cards'>
+  <div className='ui link cards'>
     {trips.map(trips =>{
             return <PortfolioCard  
             {...trips} 
@@ -30,9 +30,9 @@ export default function PortfolioGrid() {
             editNum={editNum} 
             key={trips.id}
             tripToEdit={tripToEdit}
-            removetrip={removeTrip}
+            removeTrip={removeTrip}
             toggleEdit={toggleEdit}/> })}
-  </section>
+  </div>
   )
   
   function editTrip(e, tripToEdit) {
@@ -40,10 +40,23 @@ export default function PortfolioGrid() {
     let editedTrip = trips.map(trip => trip.id === tripToEdit.id ? tripToEdit : trip);
     setTrips(editedTrip);
     setEditNum(0);
+    console.log('Trip data:', tripToEdit);
+    axios
+    .put(`https://guidr-backend-justin-chen.herokuapp.com/trips/${tripToEdit.id}`, [tripToEdit], 
+    {headers: {Authorization: localStorage.getItem('token')}})
+    .catch(error => {
+      console.error('Server Error', error);
+    });
   }
 
   function removeTrip(e, id) {
     e.preventDefault();
+    axios
+    .delete(`https://guidr-backend-justin-chen.herokuapp.com/trips/${id}`,
+    {headers: {Authorization: localStorage.getItem('token')}})
+    .catch(error => {
+      console.error('Server Error', error);
+    });
     let newTrip = trips.filter(trip => trip.id !== id);
     setTrips(newTrip);
     setEditNum(0);

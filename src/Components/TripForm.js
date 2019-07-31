@@ -18,7 +18,7 @@ const Error = styled.div`
   background: red;
 `;
 
-export default function TripForm() {
+export default function TripForm(props) {
   const [content, setContent] = useState({});
   const [error, setError] = useState();
 
@@ -47,7 +47,9 @@ export default function TripForm() {
       );
       console.log(post);
       clearForm();
+      props.setUpdate(1);
       return true;
+  
     }
   };
 
