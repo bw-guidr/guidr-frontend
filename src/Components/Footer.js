@@ -4,27 +4,18 @@ import { Grid, GridColumn } from "semantic-ui-react";
 
 function Footer() {
   return (
-    <Grid columns={6}>
+    <Grid columns={3}>
       <Grid.Row textAlign="right">
-        <Grid.Column>
+        <Grid.Column className="footer-nav" floated="right">
           <NavLink>Home</NavLink>
-        </Grid.Column>
-        <Grid.Column>
           <NavLink>Register</NavLink>
-        </Grid.Column>
-        <Grid.Column>
           <NavLink>Login</NavLink>
-        </Grid.Column>
-        <Grid.Column>
           <NavLink>Blog</NavLink>
-        </Grid.Column>
-        <Grid.Column>
           <NavLink>News</NavLink>
-        </Grid.Column>
-        <Grid.Column>
           <NavLink>Contact</NavLink>
         </Grid.Column>
       </Grid.Row>
+
       <Grid.Row>
         <Grid.Column>
           <h3>Contact Us</h3>
@@ -44,6 +35,7 @@ function Footer() {
           <p>Build your outdoor resume.</p>
         </Grid.Column>
       </Grid.Row>
+
       <Grid.Row>
         Copyright &copy; Guidr
         <br />
