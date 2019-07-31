@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react'
 // import ProfileForm from './ProfileForm'
-import Header from './Header'
 import axios from 'axios';
 
-function Profile() {
+function Profile(props) {
 
     const [ profile, setProfile ] = useState([]);
-    const [id, setId] = useState(1);
+    let id = props.match.params.id;
 
     useEffect(() => {
 
@@ -18,17 +17,18 @@ function Profile() {
         .catch(err => {
             console.log("API unavailable:", err)
         })
-    }, []);
+    }, [props.match.params.id]);
 
     return(
         <div className="profile">
-            <Header />
             <div className="userProfile">
                 <div className="profileImg">
                     <img src={profile.image_url} alt="user" />
                 </div>
                 <h1>{profile.name}</h1>
-                <p>{profile.title}</p>
+                {profile.image_url ? <img src={profile.image_url} alt="user" /> : null}
+                <p>Title: {profile.title}</p>
+                <p>Tagline: {profile.tagline}</p>
                 <p>Age: {profile.age}</p>
                 <p>{profile.length_as_guide} Experience</p>
                 <p>{profile.tagline}</p>

@@ -46,9 +46,9 @@ function App() {
           render={() => <Portfolio/>}
         />
         <Route
-          exact path="/profile"
-          render={() => (
-            <Profile />
+          exact path="/profile/:id"
+          render={(props) => (
+            <Profile {...props} />
           )}
         />
     </Router>
