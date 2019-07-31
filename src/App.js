@@ -7,6 +7,7 @@ import Home from './Components/Home'
 import Portfolio from './Components/Portfolio'
 import Login from './Components/Auth/Login'
 import SignUp from './Components/Auth/Signup'
+import Profile from './Components/Profile'
 
 
 function App() {
@@ -38,6 +39,16 @@ function App() {
           exact path="/signup"
           render={() => (
             <SignUp />
+          )}
+        />
+        <Route
+          exact path="/dashboard"
+          render={() => <Portfolio/>}
+        />
+        <Route
+          exact path="/profile"
+          render={() => (
+            <Profile />
           )}
         />
     </Router>
