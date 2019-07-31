@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import { defaultProps } from 'recompose';
 
 const FormStyled = styled.form`
   border: 1px solid black;
@@ -10,7 +11,7 @@ const Error = styled.div`
   background: red;
 `;
 
-export default function TripForm() {
+export default function TripForm(props) {
   const [content, setContent] = useState({});
   const [error, setError] = useState();
 
@@ -39,7 +40,9 @@ export default function TripForm() {
       );
       console.log(post);
       clearForm();
+      props.setUpdate(1);
       return true;
+  
     }
   };
 
