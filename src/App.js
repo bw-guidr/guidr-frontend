@@ -1,7 +1,8 @@
 import React from "react";
-import "./App.css";
+import "./App.scss";
 
-import { BrowserRouter as Router, Route } from "react-router-dom";
+
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Home from "./Components/Home";
 import Portfolio from "./Components/Portfolio";
@@ -10,21 +11,19 @@ import SignUp from "./Components/Auth/Signup";
 import Profile from "./Components/Profile";
 
 function App() {
+  let id = localStorage.getItem('id');
   return (
     <Router>
-      <Route exact path="/" render={() => <Home />} />
+      <Switch>
+        <Route exact path="/" render={() => <Home />} />
 
-      <Route exact path="/portfolio" render={() => <Portfolio />} />
+        <Route exact path="/user/:id" render={(props) => <Portfolio {...props} />} />
 
-      <Route exact path="/login" render={() => <Login />} />
+        <Route exact path="/login" render={() => <Login />} />
 
-      <Route exact path="/signup" render={() => <SignUp />} />
-      <Route exact path="/dashboard" render={() => <Portfolio />} />
-      <Route
-        exact
-        path="/profile/:id"
-        render={props => <Profile {...props} />}
-      />
+        <Route exact path="/signup" render={() => <SignUp />} />
+        <Route exact path="/dashboard" render={() => <Portfolio id={id} />} />
+      </Switch>
     </Router>
   );
 }

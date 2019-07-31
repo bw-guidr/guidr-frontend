@@ -1,39 +1,67 @@
 import React, { useState, useEffect } from "react";
 // import ProfileForm from './ProfileForm'
 import axios from "axios";
+import styled from 'styled-components';
+
+const ProfileContainer = styled.div`
+  display: flex;
+  margin-bottom: 20px;
+`;
+
+const ImgContainer = styled.div`
+  width: 50%;
+`;
+
+const InfoContainer = styled.div`
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+const TNAContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+`;
 
 function Profile(props) {
-  const [profile, setProfile] = useState([]);
-  let id = props.match.params.id;
+    const [ profile, setProfile ] = useState([]);
+    let id = props.id;
+    if(!id && props.match && props.match.params) id = props.match.params.id;
 
-  useEffect(() => {
-    axios
-      .get(`https://guidr-backend-justin-chen.herokuapp.com/user/${id}`)
-      .then(res => {
-        console.log(res.data);
-        setProfile(res.data);
-      })
-      .catch(err => {
-        console.log("API unavailable:", err);
-      });
-  }, [props.match.params.id]);
+    useEffect(() => {
 
-  return (
-    <div className="profile">
-      <div className="userProfile">
-        <div className="profileImg">
-          <img src={profile.image_url} alt="user" />
-        </div>
-        <h1>{profile.name}</h1>
-        {profile.image_url ? <img src={profile.image_url} alt="user" /> : null}
-        <p>Title: {profile.title}</p>
-        <p>Tagline: {profile.tagline}</p>
-        <p>Age: {profile.age}</p>
-        <p>{profile.length_as_guide} Experience</p>
-        <p>{profile.tagline}</p>
-      </div>
-    </div>
-  );
+        axios.get(`https://guidr-backend-justin-chen.herokuapp.com/user/${id}`)
+        .then(res => {
+            console.log(res.data)
+            setProfile(res.data)
+        })
+        .catch(err => {
+            console.log("API unavailable:", err)
+        })
+    }, [id]);
+
+    return(
+        <ProfileContainer className="profile">
+            <ImgContainer>
+              {profile.image_url ? <img src={profile.image_url} alt="user" /> : null}
+            </ImgContainer>
+            <InfoContainer className="userProfile">
+                <div className="profileImg">
+                </div>
+                <h1>{profile.name}</h1>
+                <TNAContainer>
+                  <span>{profile.title}</span>
+                  <span>Age: {profile.age}</span>
+                </TNAContainer>
+                <p>{profile.length_as_guide} Experience</p>
+                <br />
+                <p>{profile.tagline}</p>
+            </InfoContainer>
+        </ProfileContainer>
+    );
+
 }
 
 export default Profile;
