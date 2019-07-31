@@ -18,6 +18,14 @@ function Footer() {
                     <h3>Contact Us</h3>
                     <p className="footer-contact-email">hello@email.com</p>
                 </div>
+                <div className="footer-location">
+                    <h3>Location</h3>
+                    <address>2019 Lambda Lane <br />San Francisco, CA<br />United States</address>
+                </div>
+                <div className="footer-business-name">
+                    <h3>Guidr</h3>
+                    <p>Build your outdoor resume.</p>
+                </div>
             </main>
             <div className="footer-copyright">
                 Copyright &copy; Guidr
