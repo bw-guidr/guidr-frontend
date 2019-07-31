@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import { Card, Icon, Image, Button, Form } from 'semantic-ui-react'
-
+import placeholderImg from '../Assets/Trips/eheE9Nxg.png'
 
 export default function PortfolioCard (props) {
   const [thisTrip, setThisTrip] = useState({description:'',title:'',miles:''});
@@ -40,7 +40,7 @@ export default function PortfolioCard (props) {
     </>
     ) : (
     <>
-    <div className='image'><img src={props.img}/></div>
+    <div className='image'><img src={placeholderImg}/></div>
     <div className='content'>
       <a className='header'>{props.title}</a>
       <div className='meta'>{props.location}</div>
