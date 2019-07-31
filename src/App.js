@@ -11,6 +11,7 @@ import SignUp from "./Components/Auth/Signup";
 import Profile from "./Components/Profile";
 
 function App() {
+  let id = localStorage.getItem('id');
   return (
     <Router>
       <Switch>
@@ -21,7 +22,7 @@ function App() {
         <Route exact path="/login" render={() => <Login />} />
 
         <Route exact path="/signup" render={() => <SignUp />} />
-        <Route exact path="/dashboard" render={() => <Portfolio />} />
+        <Route exact path="/dashboard" render={() => <Portfolio id={id} />} />
       </Switch>
     </Router>
   );
