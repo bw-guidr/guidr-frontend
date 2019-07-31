@@ -4,7 +4,7 @@ import { Grid, GridColumn } from "semantic-ui-react";
 
 function Footer() {
   return (
-    <Grid columns={3}>
+    <Grid columns={3} className="footer">
       <Grid.Row textAlign="right">
         <Grid.Column className="footer-nav" floated="right">
           <NavLink>Home</NavLink>
