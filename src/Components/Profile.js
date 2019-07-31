@@ -1,11 +1,34 @@
 import React, { useState, useEffect } from "react";
 // import ProfileForm from './ProfileForm'
 import axios from "axios";
+import styled from 'styled-components';
+
+const ProfileContainer = styled.div`
+  display: flex;
+  margin-bottom: 20px;
+`;
+
+const ImgContainer = styled.div`
+  width: 50%;
+`;
+
+const InfoContainer = styled.div`
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+const TNAContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+`;
 
 function Profile(props) {
     const [ profile, setProfile ] = useState([]);
-    let id = props.match.params.id;
-    console.log(props.id, props.match.params.id);
+    let id = props.id;
+    if(!id && props.match && props.match.params) id = props.match.params.id;
 
     useEffect(() => {
 
@@ -20,19 +43,23 @@ function Profile(props) {
     }, [id]);
 
     return(
-        <div className="profile">
-            <div className="userProfile">
+        <ProfileContainer className="profile">
+            <ImgContainer>
+              {profile.image_url ? <img src={profile.image_url} alt="user" /> : null}
+            </ImgContainer>
+            <InfoContainer className="userProfile">
                 <div className="profileImg">
-                  {profile.image_url ? <img src={profile.image_url} alt="user" /> : null}
                 </div>
                 <h1>{profile.name}</h1>
-                <p>Title: {profile.title}</p>
-                <p>Tagline: {profile.tagline}</p>
-                <p>Age: {profile.age}</p>
+                <TNAContainer>
+                  <span>{profile.title}</span>
+                  <span>Age: {profile.age}</span>
+                </TNAContainer>
                 <p>{profile.length_as_guide} Experience</p>
+                <br />
                 <p>{profile.tagline}</p>
-            </div>
-        </div>
+            </InfoContainer>
+        </ProfileContainer>
     );
 
 }
