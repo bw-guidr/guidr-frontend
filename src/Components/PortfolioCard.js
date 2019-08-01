@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Card, Button, Checkbox } from "semantic-ui-react";
+import { Card, Button, Checkbox, Icon } from "semantic-ui-react";
 import styled from "styled-components";
 import placeholderImg from "../Assets/Trips/eheE9Nxg.png";
 import "./Fonts.css";
@@ -160,21 +160,30 @@ export default function PortfolioCard(props) {
             </ul>
           </Card.Content>
           <Card.Content extra>
-            <Button.Group compact widths={2}>
-              <div
-                className="ui green button"
-                color="green"
-                onClick={e => props.toggleEdit(props.id)}
-              >
-                Edit
-              </div>
-              <div
-                className="ui red button"
-                onClick={e => props.removeTrip(e, props.id)}
-              >
-                Remove
-              </div>
-            </Button.Group>
+            {/* <Button.Group compact widths={2}>
+              <Button icon > */}
+                <Icon
+                  link
+                  circular
+                  size="large"
+                  inverted
+                  color="grey"
+                  name="pencil circle"
+                  onClick={e => props.toggleEdit(props.id)}
+                />
+              {/* </Button> */}
+              {/* <Button icon > */}
+                <Icon
+                  link
+                  circular
+                  size="large"
+                  inverted
+                  color="grey"
+                  name="remove"
+                  onClick={e => props.removeTrip(e, props.id)}
+                />
+              {/* </Button>
+            </Button.Group> */}
           </Card.Content>
         </>
       )}
