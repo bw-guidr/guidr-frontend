@@ -18,11 +18,11 @@ function Footer() {
 
       <Grid.Row>
         <Grid.Column width={8}>
-          <h3>Contact Us</h3>
+          <h3>CONTACT US</h3>
           <p className="footer-contact-email">hello@email.com</p>
         </Grid.Column>
         <Grid.Column width={4}>
-          <h3>Location</h3>
+          <h3>LOCATION</h3>
           <p>
             2019 Lambda Lane <br />
             San Francisco, CA
@@ -31,7 +31,7 @@ function Footer() {
           </p>
         </Grid.Column>
         <Grid.Column width={4}>
-          <h3>Guidr</h3>
+          <h3>GUIDR</h3>
           <p>Build your outdoor resume.</p>
         </Grid.Column>
       </Grid.Row>
