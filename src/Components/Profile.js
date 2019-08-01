@@ -5,11 +5,20 @@ import styled from 'styled-components';
 
 const ProfileContainer = styled.div`
   display: flex;
+  margin-top: 40px;
   margin-bottom: 20px;
+  width: 70%;
 `;
 
 const ImgContainer = styled.div`
   width: 50%;
+  overflow: hidden;
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    margin: -21.875% 0;
+  }
 `;
 
 const InfoContainer = styled.div`
@@ -17,6 +26,8 @@ const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-sizing: border-box;
+  padding: 0 10px;
 `;
 
 const TNAContainer = styled.div`
