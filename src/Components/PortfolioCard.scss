@@ -1,0 +1,20 @@
+@import "./Components/Fonts.css";
+
+.pTripCard {
+  background: #bdbdbd;
+  width: 300px;
+  border: 1px solid;
+  font-family: Montserrat, serif;
+}
+.extra {
+  ul {
+    list-style: none;
+  }
+}
+
+.card-image {
+  img {
+    width: 100%;
+    border-radius: 5px;
+  }
+}

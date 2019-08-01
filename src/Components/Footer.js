@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { Grid } from "semantic-ui-react";
 
+
 function Footer() {
   return (
     <Grid stackable className="footer">
