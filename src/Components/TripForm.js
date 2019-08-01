@@ -4,14 +4,16 @@ import styled from 'styled-components';
 import './Fonts.css';
 
 const FormStyled = styled.form`
+
   border: 1px solid black;
-  font-family: Bebas;
+  font-family: 'Bebas', serif;
   
   fieldset {
     input {
-      font-family: Bebas;
+      font-family: 'Bebas', serif;
     }
   }
+  
 `;
 
 const Error = styled.div`
