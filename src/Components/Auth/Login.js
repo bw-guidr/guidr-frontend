@@ -49,7 +49,7 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div>
+        <div>
         <div className="login-page">
           <Header />
           <div className="login-form-container">
@@ -75,7 +75,6 @@ class Login extends React.Component {
                 onChange={this.handleChange}
                 required
               />
-
               <button className="login-btn" onClick={this.loginSubmit}>
                 {this.props.isLoggingIn ? (
                   <Loader
@@ -89,16 +88,19 @@ class Login extends React.Component {
                 )}{" "}
               </button>
 
-              <NavLink exact to="/">
-                <div className="login-back-btn" />
-              </NavLink>
-            </form>
-          </div>
-        </div>
-        <Footer />
-      </div>
-    );
-  }
+
+                            <NavLink exact to="/"><div className="login-back-btn"></div></NavLink>
+                        </form>
+                    </div>
+                    
+                </div>
+
+                        <Footer />
+                    </div>
+
+        )
+    }
+
 }
 
 const mapStateToProps = state => ({
