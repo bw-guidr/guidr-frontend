@@ -7,13 +7,14 @@ import Palette from './Palette';
 import axios from 'axios';
 
 
+
 const Container = styled.div`
   width: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 50px 0;
+  margin: 50px 50px;
   div#image{
     width: 200px;
     height: auto;
@@ -115,7 +116,7 @@ export default function PortfolioCard (props) {
       </>
       ) : (
       <>
-      <div className='image'><img src={placeholderImg}/></div>
+      <div className='card-image'><img src={placeholderImg}/></div>
       <Card.Content className='pTripContent'>
         <Card.Header>{props.title}</Card.Header>
         <Card.Description>{props.description}</Card.Description>
