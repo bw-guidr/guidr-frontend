@@ -7,12 +7,12 @@ function Footer() {
     <Grid className="footer">
       <Grid.Row columns={1}>
         <Grid.Column className="footer-nav" textAlign="right">
-          <NavLink>Home</NavLink>
-          <NavLink>Register</NavLink>
-          <NavLink>Login</NavLink>
-          <NavLink>Blog</NavLink>
-          <NavLink>News</NavLink>
-          <NavLink>Contact</NavLink>
+          <NavLink exact to="/">Home</NavLink>
+          <NavLink exact to="/signup">Register</NavLink>
+          <NavLink exact to="/login">Login</NavLink>
+          <NavLink exact to="/">Blog</NavLink>
+          <NavLink exact to="/">News</NavLink>
+          <NavLink exact to="/">Contact</NavLink>
         </Grid.Column>
       </Grid.Row>
 
