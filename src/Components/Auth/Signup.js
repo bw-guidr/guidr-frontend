@@ -19,7 +19,8 @@ class Signup extends React.Component {
         title: "",
         tagline: "",
         age: "",
-        length_as_guide: ""
+        length_as_guide: "",
+        image_url: ""
       }
     };
   }
@@ -46,7 +47,8 @@ class Signup extends React.Component {
       title: "",
       tagline: "",
       age: "",
-      length_as_guide: ""
+      length_as_guide: "",
+      image_url: ""
     });
     this.props.history.push("/login");
     console.log(this.state);
@@ -57,7 +59,10 @@ class Signup extends React.Component {
       <div className="signup-page">
         <Header />
         <div>
-          <h1 className="signup-text">Create an account</h1>
+          <div className="signup-header-text">
+            <h1 className="signup-text">Register</h1>
+            <h3>Start building your outdoor resume</h3>
+          </div>
           <form className="signup-form" onSubmit={this.signupSubmit}>
             <input
               className="name"
@@ -71,12 +76,7 @@ class Signup extends React.Component {
             <input
               className="username-field"
               name="username"
-              placeholder="username"
-              type="string"
-              value={this.state.credentials.username}
-              className="username-field"
-              name="username"
-              placeholder="username"
+              placeholder="Username"
               type="string"
               value={this.state.credentials.username}
               onChange={this.handleChange}
@@ -86,7 +86,7 @@ class Signup extends React.Component {
               className="password-field"
               type="password"
               name="password"
-              placeholder="password"
+              placeholder="Password"
               value={this.state.credentials.password}
               onChange={this.handleChange}
               required
@@ -95,7 +95,7 @@ class Signup extends React.Component {
               className="title-field"
               type="string"
               name="title"
-              placeholder="Your job title here"
+              placeholder="Your Title"
               value={this.state.credentials.title}
               onChange={this.handleChange}
             />
@@ -103,7 +103,7 @@ class Signup extends React.Component {
               className="tagline-field"
               type="string"
               name="tagline"
-              placeholder="Add a short description of the type of guide you specialize in"
+              placeholder="Guide Specialization"
               value={this.state.credentials.tagline}
               onChange={this.handleChange}
             />
@@ -111,7 +111,7 @@ class Signup extends React.Component {
               className="age-field"
               type="number"
               name="age"
-              placeholder="Enter age here"
+              placeholder="Age"
               value={this.state.credentials.age}
               onChange={this.handleChange}
             />
@@ -119,12 +119,26 @@ class Signup extends React.Component {
               className="guideTime-field"
               type="string"
               name="length_as_guide"
-              placeholder="Enter guide experience here e.g. 4 years"
+              placeholder="Years of Experience"
               value={this.state.credentials.length_as_guide}
               onChange={this.handleChange}
             />
 
-            <button className="signup-btn" onClick={this.signupSubmit}>
+            <input
+              className="imageurl-field"
+              type="string"
+              name="image_url"
+              placeholder="Profile Picture URL"
+              value={this.state.credentials.image_url}
+              onChange={this.handleChange}
+            />
+
+            <NavLink exact to="/">
+              <div className="login-back-btn" />
+            </NavLink>
+          </form>
+          
+          <button className="signup-btn" onClick={this.signupSubmit}>
               {this.props.isLoggingIn ? (
                 <Loader
                   type="ThreeDots"
@@ -133,14 +147,9 @@ class Signup extends React.Component {
                   width="26"
                 />
               ) : (
-                `Let's go!`
+                `Register`
               )}{" "}
             </button>
-
-            <NavLink exact to="/">
-              <div className="login-back-btn" />
-            </NavLink>
-          </form>
         </div>
         <Footer />
       </div>

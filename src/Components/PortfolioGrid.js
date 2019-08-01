@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import PortfolioCard from './PortfolioCard'
 
+import {
+  GET_TRIPS,
+} from '../Store/Action/Action'
+
 export default function PortfolioGrid(props) {
   let localID = localStorage.getItem('id');
   const [id, setId] = useState(localID);
@@ -23,6 +27,7 @@ export default function PortfolioGrid(props) {
 
   return (
   <div className='ui link cards'>
+    
     {trips.map(trips =>{
             return <PortfolioCard  
             {...trips} 
@@ -42,8 +47,11 @@ export default function PortfolioGrid(props) {
     setEditNum(0);
     console.log('Trip data:', tripToEdit);
     axios
-    .put(`https://guidr-backend-justin-chen.herokuapp.com/trips/${tripToEdit.id}`, [tripToEdit], 
+    .put(`https://guidr-backend-justin-chen.herokuapp.com/trips/${tripToEdit.id}`, tripToEdit, 
     {headers: {Authorization: localStorage.getItem('token')}})
+    .then(()=>{
+      console.log('trip id', tripToEdit.id)
+    })
     .catch(error => {
       console.error('Server Error', error);
     });

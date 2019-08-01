@@ -23,6 +23,7 @@ function App() {
 
         <Route exact path="/signup" render={() => <SignUp />} />
         <Route exact path="/dashboard" render={() => <Portfolio id={id} />} />
+
       </Switch>
     </Router>
   );
