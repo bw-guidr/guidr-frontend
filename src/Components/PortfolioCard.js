@@ -145,7 +145,6 @@ export default function PortfolioCard (props) {
   function togglePro(thisTrip) {
     thisTrip.trip_type === "Professional" ? setThisTrip({...thisTrip, trip_type:"Private"}) 
     : setThisTrip({...thisTrip, trip_type:"Professional"});
-    console.log('thisTrip:', thisTrip)
   }
 
 }
