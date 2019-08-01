@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import placeholderImg from '../Assets/Trips/eheE9Nxg.png'
 import './Fonts.css';
 import Palette from './Palette';
+import axios from 'axios';
 
 
 const Container = styled.div`
@@ -123,17 +124,12 @@ export default function PortfolioCard (props) {
         <div className='ui green button' color='green' onClick={(e) => props.toggleEdit(props.id)}>Edit</div>
         <div className='ui red button'  onClick={(e) => props.removeTrip(e, props.id)}>Remove</div>
         </Button.Group> 
-        <div id='ct-type-container'>
-              <span>Professional</span>
-              <Checkbox toggle name='trip_type' />
-              <span>Private</span>
-            </div>
       </Card.Content>
       </>
     )}
      <div id='ct-type-container'>
               <span>Professional</span>
-              <Checkbox toggle name='trip_type' />
+              <Checkbox toggle name='trip_type' onClick={(e) => togglePro()}/>
               <span>Private</span>
             </div>
     </Container>
@@ -142,10 +138,21 @@ export default function PortfolioCard (props) {
   function editHandler(e) {
     setThisTrip({...thisTrip, [e.target.name]:e.target.value});
   }
-  function togglePro(id) {
+
+  function togglePro() {
     props.trip_type === "Professional" ? 
     setThisTrip({...thisTrip, trip_type:"Private"}) 
     : setThisTrip({...thisTrip, trip_type:"Professional"});
-  
+    axios
+    .put(`https://guidr-backend-justin-chen.herokuapp.com/trips/${thisTrip.id}`, thisTrip, 
+    {headers: {Authorization: localStorage.getItem('token')}})
+    .then(()=>{
+      console.log('trip id', thisTrip.id)
+    })
+    .catch(error => {
+      console.error('Server Error', error);
+    });
   }
+
 }
+
