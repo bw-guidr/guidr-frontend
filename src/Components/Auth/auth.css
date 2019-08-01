@@ -1,98 +1,98 @@
-.login-page{
-    background-color: grey;
-    height: 75vh;
-    background-image: url(../../Assets/login-bg.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 0px -355px;
+.login-page {
+  height: 75vh;
+  background-image: url(../../Assets/login-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-width: 1564px;
+  min-height: min-content;
+  background-position: 0px -355px;
 }
 
-.login-form-container{
-    position: relative;
-    left: 40vh;
-    top: 20vh;
-    max-width: 205px;
+.login-form-container {
+  position: relative;
+  left: 40vh;
+  top: 20vh;
+  max-width: 205px;
 }
 
-.login-form-container h1{
-    font-size: 30px;
-    text-align: center;
-    margin-bottom: 30px;
+.login-form-container h1 {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
-.login-form{
-    display: flex;
-    flex-direction: column;
-    max-width: 205px;
+.login-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 205px;
 }
 
-.login-form input{
-    margin: 10px 0px;
-    height: 35px;
-    padding-left: 10px;
-    background-color: rgba(255, 255, 255, .75);
-    border: 1px solid black;
+.login-form input {
+  margin: 10px 0px;
+  height: 35px;
+  padding-left: 10px;
+  background-color: rgba(255, 255, 255, 0.75);
+  border: 1px solid black;
 }
 
-.login-form button{
-    margin-top: 30px;
-    background-color: rgb(242,193,133);
-    border-radius: 0px;
-    border: none;
+.login-form button {
+  margin-top: 30px;
+  background-color: rgb(242, 193, 133);
+  border-radius: 0px;
+  border: none;
 }
 
-.signup-page{
-    background-color: grey;
-    height: 75vh;
-    background-image: url(../../Assets/signup-bg.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 0px -155px;
+.signup-page {
+  height: 75vh;
+  background-image: url(../../Assets/signup-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0px -155px;
 }
 
-.signup-header-text{
-    text-align: center;
-    margin: 75px auto;
+.signup-header-text {
+  text-align: center;
+  margin: 75px auto;
 }
 
 .signup-form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    max-width: 35vw;
-    margin: 0px auto;
-    position: relative;
-    left: 4vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 35vw;
+  margin: 0px auto;
+  position: relative;
+  left: 4vh;
 }
 
-.signup-form input{
-    padding-left: 10px;
-    background-color: rgba(255, 255, 255, .8);
-    border: 1px solid black;
-    width: 250px;
-    margin: 15px 0px;
-    height: 35px;
+.signup-form input {
+  padding-left: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid black;
+  width: 250px;
+  margin: 15px 0px;
+  height: 35px;
 }
 
-.signup-page button{
-    background-color: rgb(242,193,133);
-    border-radius: 0px;
-    border: none;
-    width: 225px;
-    height: 40px;
-    margin: 0px auto;
-    position: relative;
-    left: 84.15vh;
-    top: 40px;
+.signup-page button {
+  background-color: rgb(242, 193, 133);
+  border-radius: 0px;
+  border: none;
+  width: 225px;
+  height: 40px;
+  margin: 0px auto;
+  position: relative;
+  left: 84.15vh;
+  top: 40px;
 }
 
-.login-footer{
-    position: relative;
-    top: 37vh;
-    padding: 0px 30px;
+.login-footer {
+  position: relative;
+  top: 37vh;
+  padding: 0px 30px;
 }
 
-.signin-footer{
-    position: relative;
-    top: 8.5vh;
-    padding: 0px 30px;
+.signin-footer {
+  position: relative;
+  top: 8.5vh;
+  padding: 0px 30px;
 }

@@ -4,7 +4,7 @@ import { Grid } from "semantic-ui-react";
 
 function Footer() {
   return (
-    <Grid className="footer">
+    <Grid stackable className="footer">
       <Grid.Row columns={1}>
         <Grid.Column className="footer-nav" textAlign="right">
           <NavLink exact to="/">Home</NavLink>
