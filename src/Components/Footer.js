@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { Grid, GridColumn } from "semantic-ui-react";
+import { Grid } from "semantic-ui-react";
 
 function Footer() {
   return (
