@@ -1,5 +1,6 @@
-@import 'Footer';
-@import 'PortfolioTripCards';
+@import './Components/Footer';
+@import './Components/Fonts.css';
+@import './PortfolioTripCards.scss'
 
 .App {
   text-align: center;
