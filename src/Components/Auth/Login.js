@@ -52,37 +52,43 @@ class Login extends React.Component {
         return (
             <div className="login-page">
                 <Header />
-                <div>
-                <h1 className="login-text">Sign in</h1>
-                <form 
-                className="login-form"
-                onSubmit={this.loginSubmit}>
-                    <input
-                        className="username-field"
-                        type="string"
-                        name='username'
-                        placeholder="username"
-                        value={this.state.credentials.username}
-                        onChange={this.handleChange}
-                        required>
-                    </input>
-                    <input
-                        className="password-field"
-                        type='password'
-                        name='password'
-                        placeholder="password"
-                        value={this.state.credentials.password}
-                        onChange={this.handleChange}
-                        required>
-                    </input>
-                    <button className="login-btn" onClick={this.loginSubmit}>{this.props.isLoggingIn ? (
-                        <Loader type="ThreeDots" color="#1f2a38" height="12" width="26" />
-                    ):( `Let's go!`)} </button>
-                    <NavLink exact to="/"><div className="login-back-btn"></div></NavLink>
-                </form>
-                </div>
+                    <div className='login-form-container'>
+                        <h1 className="login-text">Welcome Back</h1>
+
+                        <form 
+                        className="login-form"
+                        onSubmit={this.loginSubmit}>
+
+                            <input
+                                className="username-field"
+                                type="string"
+                                name='username'
+                                placeholder="Username"
+                                value={this.state.credentials.username}
+                                onChange={this.handleChange}
+                                required>
+                            </input>
+
+                            <input
+                                className="password-field"
+                                type='password'
+                                name='password'
+                                placeholder="Password"
+                                value={this.state.credentials.password}
+                                onChange={this.handleChange}
+                                required>
+                            </input>
+
+                            <button className="login-btn" onClick={this.loginSubmit}>{this.props.isLoggingIn ? (
+                                <Loader type="ThreeDots" color="#1f2a38" height="12" width="26" />
+                            ):( `Login`)} </button>
+
+                            <NavLink exact to="/"><div className="login-back-btn"></div></NavLink>
+                        </form>
+                    </div>
                 <Footer />
             </div>
+
         )
     }
 }
