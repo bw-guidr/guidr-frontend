@@ -3,14 +3,34 @@ import axios from 'axios';
 import styled from 'styled-components';
 import './Fonts.css';
 
+const FormContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
 const FormStyled = styled.form`
 
-  border: 1px solid black;
-  font-family: 'Bebas', serif;
+  font-family: 'Matchbook', serif;
+  width: 50%;
   
   fieldset {
+    border: 0;
+    display: flex;
+    flex-wrap: wrap;
+    
+    h2 {
+      font-family: Matchbook;
+    }
     input {
       font-family: 'Bebas', serif;
+      width: 100%;
+      margin: 5px 0;
+    }
+    input#ct-title, input#ct-loc {
+      width: 40%;
     }
   }
   
@@ -61,15 +81,16 @@ export default function TripForm(props) {
 
 
   return (
-      <div>
+      <FormContainer>
         <FormStyled onSubmit={submitTrip} id='trip-form'>
           <fieldset>
-            <legend>Create a Trip</legend>
+            <h2>Create a Trip</h2>
             {error ? <Error>error</Error> : null}
-            <input type='text' placeholder='Title' name='title' onChange={updateInput} value={content.title} />
-            <input type='text' placeholder='Location' name='location' onChange={updateInput} value={content.location} />
-            <input type='text' placeholder='Description' name='description' onChange={updateInput} value={content.description} />
-            <input type='number' placeholder='Miles Traveled' name='miles' onChange={updateInput} value={content.miles} />
+            <input id='ct-title' type='text' placeholder='Title' name='title' onChange={updateInput} value={content.title} />
+            <input id='ct-loc' type='text' placeholder='Location' name='location' onChange={updateInput} value={content.location} />
+            <input id='ct-mt' type='number' placeholder='Miles Traveled' name='miles' onChange={updateInput} value={content.miles} />
+            <input id='ct-desc' type='text' placeholder='Description' name='description' onChange={updateInput} value={content.description} />
+
             <button onSubmit={e => e.preventDefault()}>Submit</button>
           </fieldset>
         </FormStyled>
@@ -77,6 +98,6 @@ export default function TripForm(props) {
           <option name='trip_type' value='Professional'>Professional</option>
           <option name='trip_type' value='Private'>Private</option>
         </select>
-      </div>
+      </FormContainer>
   );
 }
