@@ -84,3 +84,15 @@
     left: 84.15vh;
     top: 40px;
 }
+
+.login-footer{
+    position: relative;
+    top: 37vh;
+    padding: 0px 30px;
+}
+
+.signin-footer{
+    position: relative;
+    top: 8.5vh;
+    padding: 0px 30px;
+}
