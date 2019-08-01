@@ -29,9 +29,11 @@ export default function PortfolioGrid(props) {
             editTrip={editTrip} 
             editNum={editNum} 
             key={trips.id}
+            trip_type={trips.trip_type}
             tripToEdit={tripToEdit}
             removeTrip={removeTrip}
-            toggleEdit={toggleEdit}/> })}
+            toggleEdit={toggleEdit}
+            /> })}
   </div>
   )
   
@@ -67,4 +69,6 @@ export default function PortfolioGrid(props) {
     let thisTrip = trips.filter(trip => trip.id === id)[0];
     setTripToEdit(thisTrip);
   }
+
+  
 }

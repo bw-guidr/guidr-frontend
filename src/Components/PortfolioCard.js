@@ -55,7 +55,7 @@ export default function PortfolioCard (props) {
         <div className='ui green button' color='green' onClick={(e) => props.toggleEdit(props.id)}>Edit</div>
         <div className='ui red button'  onClick={(e) => props.removeTrip(e, props.id)}>Remove</div>
         </Button.Group> 
-        <Button color='blue' className="proButton">Pro</Button>
+        <Button color='blue' className="proButton"  onClick={() => props.togglePro(props.id)}>Pro</Button>
       </Card.Content>
       </>
     )}
@@ -64,5 +64,11 @@ export default function PortfolioCard (props) {
   
   function editHandler(e) {
     setThisTrip({...thisTrip, [e.target.name]:e.target.value});
+  }
+  function togglePro(id) {
+    props.trip_type === "Professional" ? 
+    setThisTrip({...thisTrip, trip_type:"Private"}) 
+    : setThisTrip({...thisTrip, trip_type:"Professional"});
+  
   }
 }
