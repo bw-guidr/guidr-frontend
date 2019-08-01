@@ -6,6 +6,7 @@ import Loader from "react-loader-spinner";
 import "./auth.css";
 import { withRouter } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import Footer from '../Footer';
 
 class Signup extends React.Component {
   constructor() {
@@ -150,6 +151,7 @@ class Signup extends React.Component {
               )}{" "}
             </button>
         </div>
+        <Footer />
       </div>
     );
   }

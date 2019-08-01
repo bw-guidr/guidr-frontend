@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import Loader from 'react-loader-spinner'
 import { withRouter } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
+import Footer from '../Footer';
 import './auth.css'
 
 
@@ -86,6 +87,8 @@ class Login extends React.Component {
                         </form>
                     </div>
                 </div>
+                <Footer />
+            </div>
         )
     }
 }
