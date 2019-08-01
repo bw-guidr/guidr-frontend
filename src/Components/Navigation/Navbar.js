@@ -3,10 +3,36 @@ import { NavLink } from "react-router-dom";
 import './nav.css'
 
 class Nav extends React.Component {
-  render() {
+  clearToken = () =>{
+    localStorage.removeItem('token');
+    localStorage.removeItem('id');
+  }
 
-    if(localStorage.getItem('toke') === null){
-      return(
+  loggedIn = () => {
+    return(
+      <div>
+        <NavLink className="nav-links" exact to="/dashboard">
+          Dashboard
+        </NavLink>
+
+        <NavLink className="nav-links" exact to="/portfolio">
+          Portfolio
+        </NavLink>
+
+        <NavLink className="nav-links" exact to="/profile">
+          Profile
+        </NavLink>
+
+        <NavLink className="nav-links" exact to="/" onClick={this.clearToken}>
+          Sign Out
+        </NavLink>
+      </div>
+  )
+
+  }
+
+  signedOut = () => {
+    return(
         <div>
           <NavLink className="nav-links" exact to="/">
             Home
@@ -28,30 +54,20 @@ class Nav extends React.Component {
             Login
           </NavLink>
         </div>
+    )
+  }
+
+
+  render() {
+
+    if(localStorage.getItem('token') === null){
+      return(
+      this.signedOut()
       )
-    }
-    else if(localStorage.getItem('token')){
-      return (
-
-        <div>
-          <NavLink className="nav-links" exact to="/dashboard">
-            Dashboard
-          </NavLink>
-
-          <NavLink className="nav-links" exact to="/profile">
-            Profile
-          </NavLink>
-
-          <NavLink className="nav-links" exact to="/portfolio">
-            Portfolio
-          </NavLink>
-
-          <NavLink className="nav-links" exact to="/">
-            Sign Out
-          </NavLink>
-        </div>
-
-      );
+    } else if(localStorage.getItem('token')){
+      return(
+        this.loggedIn()
+      )
     }
   }
 }

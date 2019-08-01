@@ -151,7 +151,9 @@ class Signup extends React.Component {
               )}{" "}
             </button>
         </div>
-        <Footer />
+        <div className="signin-footer">
+          <Footer />
+        </div>
       </div>
     );
   }

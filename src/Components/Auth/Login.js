@@ -86,9 +86,10 @@ class Login extends React.Component {
                             <NavLink exact to="/"><div className="login-back-btn"></div></NavLink>
                         </form>
                     </div>
+                    <div className="login-footer">
+                        <Footer />
+                    </div>
                 </div>
-                <Footer />
-            </div>
         )
     }
 }
