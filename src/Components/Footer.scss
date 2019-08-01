@@ -1,0 +1,39 @@
+@import './Components/Fonts.css';
+
+.footer{
+    margin: 0 auto;
+    max-width:98%;
+    font-family: 'Montserrat', serif;
+  
+    .footer-nav {
+    padding:50px 0;
+    
+    a {
+    margin: 0 15px;
+    color: #292929;
+    text-decoration: none;
+     }
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  .footer-contact-email {
+    font-size: 24px;
+  }
+
+  .copyright {
+    font-size: 12px;
+    margin-top: 50px;
+    margin-left: 15px;
+  }
+
+}
+  
+  

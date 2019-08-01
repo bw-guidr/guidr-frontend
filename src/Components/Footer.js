@@ -16,27 +16,27 @@ function Footer() {
         </Grid.Column>
       </Grid.Row>
 
-      <Grid.Row  columns={3}>
-        <Grid.Column>
-          <h3>Contact Us Paragraph 1</h3>
+      <Grid.Row>
+        <Grid.Column width={8}>
+          <h3>Contact Us</h3>
           <p className="footer-contact-email">hello@email.com</p>
         </Grid.Column>
-        <Grid.Column>
+        <Grid.Column width={4}>
           <h3>Location</h3>
-          <address>
+          <p>
             2019 Lambda Lane <br />
             San Francisco, CA
             <br />
             United States
-          </address>
+          </p>
         </Grid.Column>
-        <Grid.Column>
+        <Grid.Column width={4}>
           <h3>Guidr</h3>
           <p>Build your outdoor resume.</p>
         </Grid.Column>
       </Grid.Row>
 
-      <Grid.Row>
+      <Grid.Row className="copyright">
         Copyright &copy; Guidr
         <br />
         All rights reserved
