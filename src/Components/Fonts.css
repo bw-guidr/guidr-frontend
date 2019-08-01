@@ -1,15 +1,15 @@
 @font-face {
-    font-family: 'Montserrat';
-    src: url('../Assets/Fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
+  font-family: "Montserrat";
+  src: url("../Assets/Fonts/Montserrat/Montserrat-Regular.ttf")
+    format("truetype");
 }
 
 @font-face {
-    font-family: 'Bebas';
-    src: url('../Assets/Fonts/Bebas-Regular.otf') format('opentype');
+  font-family: "Bebas";
+  src: url("../Assets/Fonts/Bebas-Regular.otf") format("opentype");
 }
 
 @font-face {
-    font-family: 'Matchbook';
-    src: url('../Assets/Fonts/Matchbook.otf') format('opentype');
+  font-family: "Matchbook";
+  src: url("../Assets/Fonts/Matchbook.otf") format("opentype");
 }
-
