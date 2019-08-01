@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Body = styled.div`
   width: 100%;
-  overflow-x: hidden;
+
   display: flex;
   flex-direction: column;
   align-items: center;
