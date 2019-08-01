@@ -14,6 +14,10 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   margin: 50px 0;
+  div#image{
+    width: 200px;
+    height: auto;
+  }
 `;
 
 const FormStyled = styled.form`
@@ -75,14 +79,12 @@ const FormStyled = styled.form`
 `;
 
 export default function PortfolioCard (props) {
-  const [thisTrip, setThisTrip] = useState({description:'',title:'',miles:''});
+  const [thisTrip, setThisTrip] = useState({...props});
 
   useEffect(() => {
     setThisTrip(props.tripToEdit);
   },[props.tripToEdit])
   
-  console.log('Props:', props)
-  console.log('thisTrip:', thisTrip)
   return (
     <Container>
       {props.editNum === props.id ? (
@@ -99,6 +101,11 @@ export default function PortfolioCard (props) {
           <input id='ct-mt' label='Miles' type='text' 
           name='miles' value={thisTrip.miles} 
           onChange={(e) => editHandler(e)} size='mini'/>
+          <div id='ct-type-container'>
+              <span>Professional</span>
+              <Checkbox toggle name='trip_type' onClick={(e) => togglePro(thisTrip)}/>
+              <span>Private</span>
+            </div>
           <div id='btn-container'>
               <button id='ct-submit' color='yellow' onClick={() => props.toggleEdit(props.id)}>Cancel</button>
               <button id='ct-submit' onClick={(e) => props.editTrip(e, thisTrip)}>Submit</button>
@@ -127,11 +134,7 @@ export default function PortfolioCard (props) {
       </Card.Content>
       </>
     )}
-     <div id='ct-type-container'>
-              <span>Professional</span>
-              <Checkbox toggle name='trip_type' onClick={(e) => togglePro()}/>
-              <span>Private</span>
-            </div>
+     
     </Container>
   );
   
@@ -139,19 +142,10 @@ export default function PortfolioCard (props) {
     setThisTrip({...thisTrip, [e.target.name]:e.target.value});
   }
 
-  function togglePro() {
-    props.trip_type === "Professional" ? 
-    setThisTrip({...thisTrip, trip_type:"Private"}) 
+  function togglePro(thisTrip) {
+    thisTrip.trip_type === "Professional" ? setThisTrip({...thisTrip, trip_type:"Private"}) 
     : setThisTrip({...thisTrip, trip_type:"Professional"});
-    axios
-    .put(`https://guidr-backend-justin-chen.herokuapp.com/trips/${thisTrip.id}`, thisTrip, 
-    {headers: {Authorization: localStorage.getItem('token')}})
-    .then(()=>{
-      console.log('trip id', thisTrip.id)
-    })
-    .catch(error => {
-      console.error('Server Error', error);
-    });
+    console.log('thisTrip:', thisTrip)
   }
 
 }
