@@ -4,9 +4,9 @@ import { Grid, GridColumn } from "semantic-ui-react";
 
 function Footer() {
   return (
-    <Grid columns={3} className="footer">
-      <Grid.Row textAlign="right">
-        <Grid.Column className="footer-nav" floated="right">
+    <Grid className="footer">
+      <Grid.Row columns={1}>
+        <Grid.Column className="footer-nav" textAlign="right">
           <NavLink>Home</NavLink>
           <NavLink>Register</NavLink>
           <NavLink>Login</NavLink>
@@ -16,9 +16,9 @@ function Footer() {
         </Grid.Column>
       </Grid.Row>
 
-      <Grid.Row>
+      <Grid.Row  columns={3}>
         <Grid.Column>
-          <h3>Contact Us</h3>
+          <h3>Contact Us Paragraph 1</h3>
           <p className="footer-contact-email">hello@email.com</p>
         </Grid.Column>
         <Grid.Column>
