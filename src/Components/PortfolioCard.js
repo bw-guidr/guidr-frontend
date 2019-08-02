@@ -12,7 +12,6 @@ const randomImg = () => {
   return ImgArr[Math.floor(Math.random() * ImgArr.length)];
 };
 
-
 const Container = styled.div`
   width: 200px;
   display: flex;
@@ -167,7 +166,10 @@ export default function PortfolioCard(props) {
                 </button>
                 <button
                   id="ct-submit"
-                  onClick={e => [props.editTrip(e, thisTrip), setChecked(thisTrip.trip_type==="Professional")]}
+                  onClick={e => [
+                    props.editTrip(e, thisTrip),
+                    setChecked(thisTrip.trip_type === "Professional")
+                  ]}
                 >
                   Submit
                 </button>
@@ -192,12 +194,7 @@ export default function PortfolioCard(props) {
       ) : (
         <>
           <div className="card-image">
-            <img
-        
-        alt="Trip scenery"
-        src={randomImg()}
-        
-      />
+            <img alt="Trip scenery" src={randomImg()} />
           </div>
           <Card.Content className="pTripContent">
             <Card.Header>{props.title}</Card.Header>
@@ -230,15 +227,13 @@ export default function PortfolioCard(props) {
   }
 
   function togglePro(e) {
-    console.log('Props:', props.trip_type)
-    console.log('thisTrip:', thisTrip.trip_type)
-    let pro = {...thisTrip, };
-    let checkbox2 = document.querySelector('input[name=trip_type]');
-    if(!checkbox2.checked) pro.trip_type = 'Professional';
-      else pro.trip_type = 'Private';
-      setThisTrip(pro);
-      console.log('trip-type:', thisTrip.trip_type)
+    console.log("Props:", props.trip_type);
+    console.log("thisTrip:", thisTrip.trip_type);
+    let pro = { ...thisTrip };
+    let checkbox2 = document.querySelector("input[name=trip_type]");
+    if (!checkbox2.checked) pro.trip_type = "Professional";
+    else pro.trip_type = "Private";
+    setThisTrip(pro);
+    console.log("trip-type:", thisTrip.trip_type);
   }
 }
-
-
