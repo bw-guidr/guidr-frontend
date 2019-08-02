@@ -48,11 +48,12 @@ export default function PortfolioGrid(props) {
     setTrips(editedTrip);
     setEditNum(0);
     console.log('Trip data:', tripToEdit);
+    console.log('Trip id:', tripToEdit.id);
     axios
     .put(`https://guidr-backend-justin-chen.herokuapp.com/trips/${tripToEdit.id}`, tripToEdit, 
     {headers: {Authorization: localStorage.getItem('token')}})
     .then(()=>{
-      console.log('trip id', tripToEdit.id)
+      
     })
     .catch(error => {
       console.error('Server Error', error);

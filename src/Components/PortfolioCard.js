@@ -52,16 +52,28 @@ const FormStyled = styled.form`
     #btn-container {
       width: 100%;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       margin-top: 30px;
 
       button#ct-submit {
-        width: 120px;
+        width: 110px;
         height: 40px;
-        font-size: 1.7rem;
+        font-size: 1.5rem;
         background: ${Palette.secondary.highlight};
         border: 0;
         border-radius: 3px;
+      }
+
+      button#remove {
+        width: 120px;
+        height: 40px;
+        font-size: 1.5rem;
+        background: red;
+        color: white;
+        border: 0;
+        border-radius: 3px;
+        margin-top: 10px;
       }
     }
     div#ct-type-container {
@@ -140,6 +152,20 @@ export default function PortfolioCard(props) {
                 >
                   Submit
                 </button>
+                <button
+                  id="remove"
+                  onClick={e => props.removeTrip(e, props.id)}
+                >
+                  Remove
+                </button>
+                {/* <Icon
+                  link
+                  circular
+                  size="large"
+                  inverted
+                  color="grey"
+                  name="remove"
+                /> */}
               </div>
             </fieldset>
           </FormStyled>
@@ -160,6 +186,8 @@ export default function PortfolioCard(props) {
             </ul>
           </Card.Content>
           <Card.Content extra>
+            {/* <Button.Group compact widths={2}>
+              <Button icon > */}
             <Icon
               link
               circular
@@ -169,16 +197,8 @@ export default function PortfolioCard(props) {
               name="pencil circle"
               onClick={e => props.toggleEdit(props.id)}
             />
-
-            <Icon
-              link
-              circular
-              size="large"
-              inverted
-              color="grey"
-              name="remove"
-              onClick={e => props.removeTrip(e, props.id)}
-            />
+            {/* </Button> */}
+            {/* <Button icon > */}
             {/* </Button>
             </Button.Group> */}
           </Card.Content>
@@ -195,6 +215,5 @@ export default function PortfolioCard(props) {
     thisTrip.trip_type === "Professional"
       ? setThisTrip({ ...thisTrip, trip_type: "Private" })
       : setThisTrip({ ...thisTrip, trip_type: "Professional" });
-    console.log("thisTrip:", thisTrip);
   }
 }
