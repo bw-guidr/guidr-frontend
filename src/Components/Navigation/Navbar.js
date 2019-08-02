@@ -9,17 +9,18 @@ class Nav extends React.Component {
   }
 
   loggedIn = () => {
+    let id = localStorage.getItem('id');
     return(
       <div>
         <NavLink className="nav-links" exact to="/dashboard">
           Dashboard
         </NavLink>
 
-        <NavLink className="nav-links" exact to="/portfolio">
+        <NavLink className="nav-links" exact to={`/user/${id}`}>
           Portfolio
         </NavLink>
 
-        <NavLink className="nav-links" exact to="/profile">
+        <NavLink className="nav-links" exact to={`/user/${id}`}>
           Profile
         </NavLink>
 
@@ -38,13 +39,13 @@ class Nav extends React.Component {
             Home
           </NavLink>
 
-          <NavLink className="nav-links" exact to="/overview">
+          <a className="nav-links" href='https://condescending-davinci-58ec2b.netlify.com/'>
             Overview
-          </NavLink>
+          </a>
 
-          <NavLink className="nav-links" exact to="/features">
+          <a className="nav-links" href='https://condescending-davinci-58ec2b.netlify.com/'>
             Features
-          </NavLink>
+          </a>
 
           <NavLink className="nav-links" exact to="/signup">
             Register
