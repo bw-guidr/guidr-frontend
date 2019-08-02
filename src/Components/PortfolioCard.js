@@ -78,6 +78,7 @@ const FormStyled = styled.form`
 
 export default function PortfolioCard(props) {
   const [thisTrip, setThisTrip] = useState({ ...props });
+  const [checked, setChecked] = useState(true);
 
   useEffect(() => {
     setThisTrip(props.tripToEdit);
@@ -118,13 +119,25 @@ export default function PortfolioCard(props) {
                 size="mini"
               />
               <div id="ct-type-container">
-                <span>Professional</span>
+              <span>Private</span>
+              
+              {props.trip_type === "Professional" ? (
+                <>
                 <Checkbox
-                  toggle
-                  name="trip_type"
-                  onClick={e => togglePro(thisTrip)}
-                />
-                <span>Private</span>
+                toggle
+                checked={checked}
+                name="trip_type"
+                onClick={e => [togglePro(e), setChecked(false)]}/>
+                </>
+              ):(
+                <>
+                <Checkbox
+                toggle
+                name="trip_type"
+                onClick={e => togglePro(e)}/>
+                </>
+              )}
+                <span>Professional</span>
               </div>
               <div id="btn-container">
                 <button
@@ -136,7 +149,7 @@ export default function PortfolioCard(props) {
                 </button>
                 <button
                   id="ct-submit"
-                  onClick={e => props.editTrip(e, thisTrip)}
+                  onClick={e => [props.editTrip(e, thisTrip), setChecked(thisTrip.trip_type==="Professional")]}
                 >
                   Submit
                 </button>
@@ -150,7 +163,6 @@ export default function PortfolioCard(props) {
                   onClick={e => props.removeTrip(e, props.id)}
                 />
               </div>
-             
             </fieldset>
           </FormStyled>
         </>
@@ -170,8 +182,6 @@ export default function PortfolioCard(props) {
             </ul>
           </Card.Content>
           <Card.Content extra>
-            {/* <Button.Group compact widths={2}>
-              <Button icon > */}
                 <Icon
                   link
                   circular
@@ -181,10 +191,6 @@ export default function PortfolioCard(props) {
                   name="pencil circle"
                   onClick={e => props.toggleEdit(props.id)}
                 />
-              {/* </Button> */}
-              {/* <Button icon > */}
-              {/* </Button>
-            </Button.Group> */}
           </Card.Content>
         </>
       )}
@@ -195,8 +201,16 @@ export default function PortfolioCard(props) {
     setThisTrip({ ...thisTrip, [e.target.name]: e.target.value });
   }
 
-  function togglePro(thisTrip) {
-    thisTrip.trip_type === "Professional" ? setThisTrip({...thisTrip, trip_type:"Private"}) 
-    : setThisTrip({...thisTrip, trip_type:"Professional"});
+  function togglePro(e) {
+    console.log('Props:', props.trip_type)
+    console.log('thisTrip:', thisTrip.trip_type)
+    let pro = {...thisTrip, };
+    let checkbox2 = document.querySelector('input[name=trip_type]');
+    if(!checkbox2.checked) pro.trip_type = 'Professional';
+      else pro.trip_type = 'Private';
+      setThisTrip(pro);
+      console.log('trip-type:', thisTrip.trip_type)
   }
 }
+
+
