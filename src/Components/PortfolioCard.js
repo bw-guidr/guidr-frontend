@@ -10,7 +10,7 @@ const Container = styled.div`
   width: 200px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin: 50px 50px;
   div#image {
@@ -52,16 +52,28 @@ const FormStyled = styled.form`
     #btn-container {
       width: 100%;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       margin-top: 30px;
 
       button#ct-submit {
-        width: 120px;
+        width: 110px;
         height: 40px;
-        font-size: 1.7rem;
+        font-size: 1.5rem;
         background: ${Palette.secondary.highlight};
         border: 0;
         border-radius: 3px;
+      }
+
+      button#remove {
+        width: 120px;
+        height: 40px;
+        font-size: 1.5rem;
+        background: red;
+        color: white;
+        border: 0;
+        border-radius: 3px;
+        margin-top: 10px;
       }
     }
     div#ct-type-container {
@@ -140,17 +152,21 @@ export default function PortfolioCard(props) {
                 >
                   Submit
                 </button>
-              <Icon
+                <button
+                  id="remove"
+                  onClick={e => props.removeTrip(e, props.id)}
+                >
+                  Remove
+                </button>
+                {/* <Icon
                   link
                   circular
                   size="large"
                   inverted
                   color="grey"
                   name="remove"
-                  onClick={e => props.removeTrip(e, props.id)}
-                />
+                /> */}
               </div>
-             
             </fieldset>
           </FormStyled>
         </>
@@ -172,18 +188,18 @@ export default function PortfolioCard(props) {
           <Card.Content extra>
             {/* <Button.Group compact widths={2}>
               <Button icon > */}
-                <Icon
-                  link
-                  circular
-                  size="large"
-                  inverted
-                  color="grey"
-                  name="pencil circle"
-                  onClick={e => props.toggleEdit(props.id)}
-                />
-              {/* </Button> */}
-              {/* <Button icon > */}
-              {/* </Button>
+            <Icon
+              link
+              circular
+              size="large"
+              inverted
+              color="grey"
+              name="pencil circle"
+              onClick={e => props.toggleEdit(props.id)}
+            />
+            {/* </Button> */}
+            {/* <Button icon > */}
+            {/* </Button>
             </Button.Group> */}
           </Card.Content>
         </>
@@ -196,7 +212,8 @@ export default function PortfolioCard(props) {
   }
 
   function togglePro(thisTrip) {
-    thisTrip.trip_type === "Professional" ? setThisTrip({...thisTrip, trip_type:"Private"}) 
-    : setThisTrip({...thisTrip, trip_type:"Professional"});
+    thisTrip.trip_type === "Professional"
+      ? setThisTrip({ ...thisTrip, trip_type: "Private" })
+      : setThisTrip({ ...thisTrip, trip_type: "Professional" });
   }
 }
