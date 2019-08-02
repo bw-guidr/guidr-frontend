@@ -10,7 +10,7 @@ const Container = styled.div`
   width: 200px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin: 50px 50px;
   div#image {
