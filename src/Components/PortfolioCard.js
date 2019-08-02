@@ -132,7 +132,6 @@ export default function PortfolioCard(props) {
               />
               <div id="ct-type-container">
               <span>Private</span>
-              
               {props.trip_type === "Professional" ? (
                 <>
                 <Checkbox
@@ -199,8 +198,6 @@ export default function PortfolioCard(props) {
             </ul>
           </Card.Content>
           <Card.Content extra>
-            {/* <Button.Group compact widths={2}>
-              <Button icon > */}
             <Icon
               link
               circular
@@ -210,10 +207,6 @@ export default function PortfolioCard(props) {
               name="pencil circle"
               onClick={e => props.toggleEdit(props.id)}
             />
-            {/* </Button> */}
-            {/* <Button icon > */}
-            {/* </Button>
-            </Button.Group> */}
           </Card.Content>
         </>
       )}
