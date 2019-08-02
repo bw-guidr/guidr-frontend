@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 // import ProfileForm from './ProfileForm'
 import axios from "axios";
 import styled from 'styled-components';
+import DefaultProfilePic from '../Assets/Trips/5Ste6Y8A.png'
 
 const ProfileContainer = styled.div`
   display: flex;
@@ -56,7 +57,7 @@ function Profile(props) {
     return(
         <ProfileContainer className="profile">
             <ImgContainer>
-              {profile.image_url ? <img src={profile.image_url} alt="user" /> : null}
+              {profile.image_url ? <img src={profile.image_url} alt="user" /> : <img src={DefaultProfilePic} alt="user" />}
             </ImgContainer>
             <InfoContainer className="userProfile">
                 <div className="profileImg">
