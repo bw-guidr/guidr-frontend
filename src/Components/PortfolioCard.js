@@ -140,7 +140,17 @@ export default function PortfolioCard(props) {
                 >
                   Submit
                 </button>
+              <Icon
+                  link
+                  circular
+                  size="large"
+                  inverted
+                  color="grey"
+                  name="remove"
+                  onClick={e => props.removeTrip(e, props.id)}
+                />
               </div>
+             
             </fieldset>
           </FormStyled>
         </>
@@ -173,15 +183,6 @@ export default function PortfolioCard(props) {
                 />
               {/* </Button> */}
               {/* <Button icon > */}
-                <Icon
-                  link
-                  circular
-                  size="large"
-                  inverted
-                  color="grey"
-                  name="remove"
-                  onClick={e => props.removeTrip(e, props.id)}
-                />
               {/* </Button>
             </Button.Group> */}
           </Card.Content>
@@ -195,9 +196,7 @@ export default function PortfolioCard(props) {
   }
 
   function togglePro(thisTrip) {
-    thisTrip.trip_type === "Professional"
-      ? setThisTrip({ ...thisTrip, trip_type: "Private" })
-      : setThisTrip({ ...thisTrip, trip_type: "Professional" });
-    console.log("thisTrip:", thisTrip);
+    thisTrip.trip_type === "Professional" ? setThisTrip({...thisTrip, trip_type:"Private"}) 
+    : setThisTrip({...thisTrip, trip_type:"Professional"});
   }
 }
