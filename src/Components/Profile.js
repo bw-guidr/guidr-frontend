@@ -32,6 +32,7 @@ const InfoContainer = styled.div`
 
 const TNAContainer = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   width: 100%;
 `;
@@ -65,10 +66,10 @@ function Profile(props) {
                 <TNAContainer>
                   <span>{profile.title}</span>
                   <span>Age: {profile.age}</span>
+      
+                <p>{profile.length_as_guide} Years of Experience</p>
+                <p>Specialty: {profile.tagline}</p>
                 </TNAContainer>
-                <p>{profile.length_as_guide} Experience</p>
-                <br />
-                <p>{profile.tagline}</p>
             </InfoContainer>
         </ProfileContainer>
     );
