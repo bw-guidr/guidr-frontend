@@ -6,6 +6,13 @@ import "./Fonts.css";
 import Palette from "./Palette";
 import axios from "axios";
 
+import ImgArr from "../Assets/Trips/ImgArr";
+
+const randomImg = () => {
+  return ImgArr[Math.floor(Math.random() * ImgArr.length)];
+};
+
+
 const Container = styled.div`
   width: 200px;
   display: flex;
@@ -185,7 +192,12 @@ export default function PortfolioCard(props) {
       ) : (
         <>
           <div className="card-image">
-            <img src={placeholderImg} />
+            <img
+        
+        alt="Trip scenery"
+        src={randomImg()}
+        
+      />
           </div>
           <Card.Content className="pTripContent">
             <Card.Header>{props.title}</Card.Header>
