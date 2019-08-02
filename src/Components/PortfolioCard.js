@@ -160,29 +160,26 @@ export default function PortfolioCard(props) {
             </ul>
           </Card.Content>
           <Card.Content extra>
-            {/* <Button.Group compact widths={2}>
-              <Button icon > */}
-                <Icon
-                  link
-                  circular
-                  size="large"
-                  inverted
-                  color="grey"
-                  name="pencil circle"
-                  onClick={e => props.toggleEdit(props.id)}
-                />
-              {/* </Button> */}
-              {/* <Button icon > */}
-                <Icon
-                  link
-                  circular
-                  size="large"
-                  inverted
-                  color="grey"
-                  name="remove"
-                  onClick={e => props.removeTrip(e, props.id)}
-                />
-              {/* </Button>
+            <Icon
+              link
+              circular
+              size="large"
+              inverted
+              color="grey"
+              name="pencil circle"
+              onClick={e => props.toggleEdit(props.id)}
+            />
+
+            <Icon
+              link
+              circular
+              size="large"
+              inverted
+              color="grey"
+              name="remove"
+              onClick={e => props.removeTrip(e, props.id)}
+            />
+            {/* </Button>
             </Button.Group> */}
           </Card.Content>
         </>
