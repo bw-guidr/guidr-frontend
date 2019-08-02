@@ -30,7 +30,7 @@ export default function TripCard(data) {
       />
       <Card.Content>
         <Card.Header>{data.title}</Card.Header>
-        <Card.Meta>{data.description}</Card.Meta>
+        <Card.Description>{data.description}</Card.Description>
       </Card.Content>
       <Card.Content extra>
         <a>
