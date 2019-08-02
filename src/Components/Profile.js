@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 // import ProfileForm from './ProfileForm'
 import axios from "axios";
 import styled from 'styled-components';
-import DefaultProfilePic from '../Assets/Trips/5Ste6Y8A.png'
+import DefaultProfilePic from '../Assets/5Ste6Y8A.png'
+
 
 const ProfileContainer = styled.div`
   display: flex;
@@ -33,6 +34,7 @@ const InfoContainer = styled.div`
 
 const TNAContainer = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   width: 100%;
 `;
@@ -66,10 +68,10 @@ function Profile(props) {
                 <TNAContainer>
                   <span>{profile.title}</span>
                   <span>Age: {profile.age}</span>
+      
+                <p>{profile.length_as_guide} Years of Experience</p>
+                <p>Specialty: {profile.tagline}</p>
                 </TNAContainer>
-                <p>{profile.length_as_guide} Experience</p>
-                <br />
-                <p>{profile.tagline}</p>
             </InfoContainer>
         </ProfileContainer>
     );

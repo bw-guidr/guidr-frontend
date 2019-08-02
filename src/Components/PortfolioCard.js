@@ -137,26 +137,23 @@ export default function PortfolioCard(props) {
                 size="mini"
               />
               <div id="ct-type-container">
-                <span>Private</span>
-
-                {props.trip_type === "Professional" ? (
-                  <>
-                    <Checkbox
-                      toggle
-                      checked={checked}
-                      name="trip_type"
-                      onClick={e => [togglePro(e), setChecked(false)]}
-                    />
-                  </>
-                ) : (
-                  <>
-                    <Checkbox
-                      toggle
-                      name="trip_type"
-                      onClick={e => togglePro(e)}
-                    />
-                  </>
-                )}
+              <span>Private</span>
+              {props.trip_type === "Professional" ? (
+                <>
+                <Checkbox
+                toggle
+                checked={checked}
+                name="trip_type"
+                onClick={e => [togglePro(e), setChecked(false)]}/>
+                </>
+              ):(
+                <>
+                <Checkbox
+                toggle
+                name="trip_type"
+                onClick={e => togglePro(e)}/>
+                </>
+              )}
                 <span>Professional</span>
               </div>
               <div id="btn-container">
@@ -210,8 +207,6 @@ export default function PortfolioCard(props) {
             </ul>
           </Card.Content>
           <Card.Content extra>
-            {/* <Button.Group compact widths={2}>
-              <Button icon > */}
             <Icon
               link
               circular
@@ -221,10 +216,6 @@ export default function PortfolioCard(props) {
               name="pencil circle"
               onClick={e => props.toggleEdit(props.id)}
             />
-            {/* </Button> */}
-            {/* <Button icon > */}
-            {/* </Button>
-            </Button.Group> */}
           </Card.Content>
         </>
       )}

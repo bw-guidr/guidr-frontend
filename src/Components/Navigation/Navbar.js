@@ -20,10 +20,6 @@ class Nav extends React.Component {
           Portfolio
         </NavLink>
 
-        <NavLink className="nav-links" exact to={`/user/${id}`}>
-          Profile
-        </NavLink>
-
         <NavLink className="nav-links" exact to="/" onClick={this.clearToken}>
           Sign Out
         </NavLink>
